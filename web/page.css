@@ -1,0 +1,33 @@
+html { color-scheme: light dark; }
+body { margin: 0; }
+
+.markdown-body {
+  box-sizing: border-box;
+  min-height: 100vh;
+  padding: 24px max(28px, calc((100% - 980px) / 2)) 48px;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Yu Gothic UI", "Meiryo UI", Meiryo, "Noto Sans", Helvetica, Arial, sans-serif;
+}
+
+.markdown-body code,
+.markdown-body pre,
+.markdown-body kbd,
+.markdown-body samp {
+  font-family: ui-monospace, Consolas, "Cascadia Mono", "BIZ UDGothic", "MS Gothic", monospace;
+}
+
+/* highlight.js テーマの背景・余白は github-markdown-css 側に合わせる */
+.markdown-body pre code.hljs,
+.markdown-body code.hljs {
+  background: transparent;
+  padding: 0;
+}
+
+.markdown-body img { background-color: transparent; }
+
+.mdview-error {
+  margin-top: 40px;
+  padding: 16px 20px;
+  border: 1px solid #d1242f;
+  border-radius: 6px;
+}
+.mdview-error h2 { margin-top: 0; border: none; color: #d1242f; }
