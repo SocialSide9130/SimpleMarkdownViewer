@@ -84,7 +84,15 @@ function createPane(url, grow, index) {
     const b = e.target.closest('button');
     if (b) paneAction(p, b.dataset.act);
   });
-  el.querySelector('.pane-header').addEventListener('pointerdown', () => setActive(p));
+  const header = el.querySelector('.pane-header');
+  header.addEventListener('pointerdown', () => setActive(p));
+  // ホイールクリック（中ボタン）で閉じる。mousedown を止めて自動スクロールモードに入らないようにする
+  header.addEventListener('mousedown', e => { if (e.button === 1) e.preventDefault(); });
+  header.addEventListener('auxclick', e => {
+    if (e.button !== 1) return;
+    e.preventDefault();
+    closePane(p);
+  });
   frame.addEventListener('load', () => onFrameLoad(p));
 
   if (index == null || index < 0 || index > panes.length) panes.push(p);
